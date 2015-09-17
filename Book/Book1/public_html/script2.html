@@ -10,10 +10,10 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body><scipt>
+    <body><script>
         function debug(msg) {
 var log = $("#debuglog"); // Find the element to display msg in.
-if (log.length == 0) { // If it doesn't exist yet, create it...
+if (log.length === 0) { // If it doesn't exist yet, create it...
 log = $("<div id='debuglog'><h1>Debug Log</h1></div>");
 log.appendTo(document.body); // and insert it at the end of the body.
 }
