@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Author: Amul Bham
+Date: 9/16/2015
+Purpose: This web page takes a users score and outputs a grade using
+if-else statements and ternary operators
+-->
+<html>
+    <head>
+        <title>Grade Calculator-Ternary Operators</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script >
+           //Prompt user for their score
+           var score =prompt("What's your score?");
+           //Use a ternary operator to check that the user inputted
+           //valid score, then 'else' to check the grade if score
+           //is indeed valid
+           var grade = score < 0 || score > 100? "Not a possible score":
+                       score < 60 ? "an F":
+                       score < 70 ? "a D":
+                       score < 80 ? "a C":
+                       score < 90 ? "a B":
+                       score <= 100 ? "an A":
+           //Output the results
+                document.write("<p>Your score is " + grade + ".</p>");
+            
+            
+        </script>
+    </body>
+</html>
