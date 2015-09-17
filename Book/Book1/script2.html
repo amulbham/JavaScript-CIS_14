@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body><scipt>
+        function debug(msg) {
+var log = $("#debuglog"); // Find the element to display msg in.
+if (log.length == 0) { // If it doesn't exist yet, create it...
+log = $("<div id='debuglog'><h1>Debug Log</h1></div>");
+log.appendTo(document.body); // and insert it at the end of the body.
+}
+log.append($("<pre/>").text(msg)); // Wrap msg in <pre> and append to log.
+}</script>
+    </body>
+</html>
