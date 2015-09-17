@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
     </head>
     <body>
-        <div>TODO write content</div>
+       <script type = "text/javascript">
+        var hrs = prompt("How many hours did you work?");
+        var pRate =prompt("What was your pay rate?"); 
+        var double = pRate * 2;
+        var triple = pRate * 3;
+        var tier1 = hrs * pRate;
+        var tier2 = 20 * pRate+ ((hrs - 20) * double);
+        var tier3 = (20 * pRate)+ (20 * double) + ((hrs - 40) * triple);
+        var pcheck;
+        
+        if(hrs<=20){pcheck = tier1;}
+        else if (hrs>20 && hrs<=40){pcheck = tier2;}
+        else{pcheck = tier3;}
+        
+        console.log("Your paycheck for this pay period is $" + pcheck); 
+           </script>
+        
     </body>
 </html>
