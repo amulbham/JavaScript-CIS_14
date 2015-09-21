@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Pay Check</title>
+    <script>
+	/*
+		Dr. Mark E. Lehr
+		Sept 21st, 2015
+		Purpose: For-Loop
+	*/
+	</script>
+    </head>
+    
+    <body>
+    <table width="200" border="1">
+        <tr>
+          <th>Hours</th>
+          <th>Pay Check</th>
+          <th>Pay Check (Payrate #2)</th>
+        </tr>
+        <script>
+			//Declare variables
+				//utilized an array to store both payrates and both paychecks
+			var payRate=[prompt("Calculate your Paycheck table \n Pay Rate $'s"),prompt("Enter another Pay Rate")];
+			var nHours=85;//Total number of hours in table
+			var payChk={}; //Initialize the pay check = 0
+			var dblTim=20;//Double time starts
+			var trpTim=40;//Triple time starts
+			for(var hours=0;hours<=nHours;hours++){
+				document.write("<tr>");
+				  if(hours<=dblTim){
+			           payChk[0]=hours*payRate[0];
+					   payChk[1]=hours*payRate[1];
+				  }else if(hours<trpTim){
+					   payChk[0]=dblTim*payRate[0]+(hours-dblTim)*2*payRate[0];
+					   payChk[1]=dblTim*payRate[1]+(hours-dblTim)*2*payRate[1];
+				  }else{
+					   payChk[0]=dblTim*payRate[0]+(trpTim-dblTim)*2*payRate[0]+(hours-trpTim)*3*payRate[0];
+					   payChk[1]=dblTim*payRate[1]+(trpTim-dblTim)*2*payRate[1]+(hours-trpTim)*3*payRate[1];
+				  }
+				  document.write("<td>"+hours+"</td>");
+				  document.write("<td>$"+payChk[0].toFixed(2)+"</td>");
+				  document.write("<td>$"+payChk[1].toFixed(2)+"</td>");
+
+				  
+				document.write("</tr>");
+			}
+		</script>
+	</table>
+    </body>
+</html>
