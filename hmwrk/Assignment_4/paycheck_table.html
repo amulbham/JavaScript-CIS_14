@@ -1,10 +1,46 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-</body>
+    <head>
+    <meta charset="utf-8">
+    <title>Pay Check</title>
+    <script>
+	/*
+		Amul Bham
+		Sept 21st, 2015
+		Purpose: Create a paycheck table
+		using parralel arrays
+	*/
+	</script>
+    </head>
+    
+    <body>
+    <table width="200" border="1">
+        <tr align="center">
+          <th>Hours</th>
+          <th>Gross Pay</th>
+          <th>Pay Rate</th>
+          <th>Taxes at 10 %</th>
+          <th>Net Pay</th>
+        </tr>
+        <script>
+			//Declare variables
+			//utilized an array to store both payrates and both paychecks
+			var payRate=[prompt("Calculate your Paycheck table \n Pay Rate $'s")];
+			var nHours={};//Total number of hours in table
+			var payChk={}; //Initialize the pay check = 0
+			var regTim = payRate * hours;
+			var dblTim=20*payRate+(hours-20)*2*payRate;
+			var trpTim=20*payRate+(20)*2*payRate+(hours-40)*3*payRate;
+			for(var hours=0;hours<=nHours;hours++){
+				document.write("<tr>");
+				  document.write("<td>"++"</td>");
+				  document.write("<td>$"++"</td>");
+				  document.write("<td>$"++"</td>");
+				  document.write("<td>"++"</td>");
+				  document.write("<td>$"++"</td>");
+				document.write("</tr>"); 
+			
+		</script>
+	</table>
+    </body>
 </html>
