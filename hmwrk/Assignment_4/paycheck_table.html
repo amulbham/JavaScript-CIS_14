@@ -14,13 +14,13 @@
     </head>
     
     <body>
-    <table width="200" border="1">
+    <table width="250" border="1">
         <tr align="center">
           <th>Hours</th>
           <th colspan="8">Gross Pay</th>
           <th>Pay Rate($'s/hour)</th>
-          <th colspan="8">Taxes at 10 %</th>
-          <th colspan="10">Net Pay</th>
+          <th colspan="10">Taxes at 10 %</th>
+          <th colspan="12">Net Pay</th>
         </tr>
         <script>
 			//Declare variables
@@ -43,6 +43,7 @@
 				if (count<20){
 					var regTim = payRate * count;
 					payChk[count] = regTim;
+						//Nested if used to distinguish between 0 and the 1-19
 						if(count ==0){
 							payHr[count] = 0;
 						}else{
@@ -56,6 +57,8 @@
 					payChk[count] = trpTim;
 					payHr[count] = (payRate*3).toFixed(2);
 					}	
+				//In the same, loop, intialize taxes and net pay AFTER
+				//the pay check has been determined. 	
 				tax[count] = (.1 * payChk[count]).toFixed(2);
 				netPy[count] = (payChk[count] - tax[count]).toFixed(2);
 				}	
@@ -68,13 +71,11 @@
 				  document.write("<td align = 'center'>"+nHours[hours]+"</td>");
 				  document.write("<td colspan='8' align ='center'>" + "$"+payChk[hours].toFixed(2)+"</td>");
 				  document.write("<td align = 'center'>"+"$ "+payHr[hours]+"</td>");
-				  document.write("<td colspan='8' align ='center'>" + "$ " +tax[hours]+ "</td>");
-				  document.write("<td colspan ='10'>" + "$ " +netPy[hours]+ "</td>");
+				  document.write("<td colspan='10'>" + "$" +tax[hours]+ "</td>");
+				  document.write("<td colspan='12'>" + "$" +netPy[hours]+ "</td>");
 				  
 				document.write("</tr>");
 			}
-				 
-			
 		</script>
 	</table>
     </body>
