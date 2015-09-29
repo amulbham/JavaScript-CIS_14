@@ -3,13 +3,12 @@
     <head>
     <meta charset="utf-8">
     <title>Pay Check</title>
-    <script>
+    <script src="getArr_function.js">
 	/*
 		Amul Bham
-		Sept 29st, 2015
+		Sept 21st, 2015
 		Purpose: Create a paycheck table
-		using parralel arrays, add a function which
-		returns an array
+		using parralel arrays
 	*/
 	</script>
     </head>
@@ -23,61 +22,20 @@
           <th colspan="10">Taxes at 10 %</th>
           <th colspan="12">Net Pay</th>
         </tr>
-        <script src="getArr_function.js">
+        <script>
 			//Declare variables
-			var payRate=[prompt("Enter your Rate of Pay")];
+			var payRate=prompt("Enter your Rate of Pay");
 			var nHours={};//Total number of hours in table
 			var payChk={}; //array to store paycheck values
 			var payHr ={}; //stores the payrate per hour for each set of times
 			var tax = {};	//Stores the amount of taxes taken
 			var netPy = {};	//stores the net pay of the employee
 			
-			//Initialize Variables using separate for loops for each array
-			
-				/*Use a forloop to intialize the number of hours, in addition
-			used to intialize the payrate depending on which time segment it is*/
-				/*Intialize the paycheck arrays, utilized
-				if statements to guide program to compute
-			double and triple time given the circumstances are met*/	
-			for(var count = 0; count<73; count++){
-				nHours[count] = count;
-				if (count<20){
-					var regTim = payRate * count;
-					payChk[count] = regTim;
-						//Nested if used to distinguish between 0 and the 1-19
-						if(count ==0){
-							payHr[count] = 0;
-						}else{
-							payHr[count] = payRate;}
-				}else if(count>=20 & count<40 ){
-					var dblTim=20*payRate+(count-20)*2*payRate;
-					payChk[count] = dblTim;
-					payHr[count] = (payRate *2).toFixed(2);
-				}else{
-					var trpTim=20*payRate+(20)*2*payRate+(count-40)*3*payRate;
-					payChk[count] = trpTim;
-					payHr[count] = (payRate*3).toFixed(2);
-					}	
-				//In the same, loop, intialize taxes and net pay AFTER
-				//the pay check has been determined. 	
-				tax[count] = (.1 * payChk[count]).toFixed(2);
-				netPy[count] = (payChk[count] - tax[count]).toFixed(2);
-				}	
-				
-			    
-			//Use 1 for loop to display the arrays and format data	
-			for(var hours=0;hours<73;hours++){
-				document.write("<tr>");
-				
-				  document.write("<td align = 'center'>"+nHours[hours]+"</td>");
-				  document.write("<td colspan='8' align ='center'>" + "$"+payChk[hours].toFixed(2)+"</td>");
-				  document.write("<td align = 'center'>"+"$ "+payHr[hours]+"</td>");
-				  document.write("<td colspan='10'>" + "$" +tax[hours]+ "</td>");
-				  document.write("<td colspan='12'>" + "$" +netPy[hours]+ "</td>");
-				  
-				document.write("</tr>");
-			}
+				calcArr(nHours,payChk,payHr,tax,netPy,payRate);
+				//call the get array function to display the table
+				getArr(nHours,payChk,payHr,tax,netPy);
 		</script>
+        
 	</table>
     </body>
 </html>
