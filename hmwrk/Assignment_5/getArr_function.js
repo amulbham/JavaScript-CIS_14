@@ -2,8 +2,8 @@
 	/*
 		Amul Bham
 		Sept 29st, 2015
-		Purpose: Create a function that outputs
-		an array 
+		Purpose: Create a function that creates an array, calculates its values,
+		and then display the arrays in table format
 	*/
 	
 	function calcArr(nHours,payChk,payHr,tax,netPy,payRate){

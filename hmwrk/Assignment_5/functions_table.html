@@ -23,6 +23,7 @@
           <th colspan="12">Net Pay</th>
         </tr>
         <script>
+		
 			//Declare variables
 			var payRate=prompt("Enter your Rate of Pay");
 			var nHours={};//Total number of hours in table
@@ -31,9 +32,13 @@
 			var tax = {};	//Stores the amount of taxes taken
 			var netPy = {};	//stores the net pay of the employee
 			
+				/*call the calculate array function to calculate each
+				column with respect to the payrate*/
 				calcArr(nHours,payChk,payHr,tax,netPy,payRate);
+				
 				//call the get array function to display the table
 				getArr(nHours,payChk,payHr,tax,netPy);
+				
 		</script>
         
 	</table>
